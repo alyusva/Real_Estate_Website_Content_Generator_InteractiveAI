@@ -1,0 +1,9 @@
+<title>{{ title }}</title>
+<meta name="description" content="{{ meta_description }}" />
+<h1>{{ h1 }}</h1>
+<section id="description">{{ description }}</section>
+<ul id="key-features">
+{% for feature in key_features %}<li>{{ feature }}</li>{% endfor %}
+</ul>
+<section id="neighborhood">{{ neighborhood }}</section>
+<p class="call-to-action">{{ call_to_action }}</p> 
