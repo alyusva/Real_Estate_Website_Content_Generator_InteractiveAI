@@ -1,0 +1,20 @@
+{
+  "title": "Apartamento de Pepe en San Vicente",
+  "location": {
+    "city": "Santander",
+    "neighborhood": "San Vicente de la Barquera"
+  },
+  "features": {
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area_sqm": 80,
+    "balcony": true,
+    "parking": false,
+    "elevator": false,
+    "floor": 2,
+    "year_built": 2005
+  },
+  "price": 350000,
+  "listing_type": "sale",
+  "language": "en"
+} 

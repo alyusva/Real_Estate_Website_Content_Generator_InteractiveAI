@@ -1,0 +1,19 @@
+{
+  "title": "Apartamento T2 no Porto",
+  "location": {
+    "city": "Porto",
+    "neighborhood": "Cedofeita"
+  },
+  "features": {
+    "bathrooms": 1,
+    "area_sqm": 85,
+    "balcony": false,
+    "parking": true,
+    "elevator": false,
+    "floor": 1,
+    "year_built": 1995
+  },
+  "price": 320000,
+  "listing_type": "sale",
+  "language": "pt"
+} 
