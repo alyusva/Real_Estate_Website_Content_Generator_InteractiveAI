@@ -8,7 +8,7 @@ Esta solución implementa el **AI Engineer Technical Challenge** para generar co
 
 ✅ **Genera exactamente 7 secciones HTML** según el challenge  
 ✅ **3 modos de generación**: Template, OpenAI, y Ollama  
-✅ **Soporte bilingüe** (Inglés y Portugués)  
+✅ **Soporte multilingüe** (Inglés, Portugués y Español)  
 ✅ **Optimización SEO** con keywords naturales  
 ✅ **Manejo robusto** de datos faltantes  
 ✅ **Validación de límites** de caracteres  
@@ -189,6 +189,7 @@ curl -X POST http://localhost:8000/generate \
 
 ## 🌍 **Soporte multilingüe**
 
+
 ### Inglés (`"language": "en"`)
 - Keywords: "apartment for sale in Lisbon", "real estate in Portugal"
 - Formato de precio: €650,000
@@ -198,6 +199,11 @@ curl -X POST http://localhost:8000/generate \
 - Keywords: "apartamento para venda em Lisboa", "imobiliário em Portugal"
 - Formato de precio: €650.000
 - Vocabulario: quartos, casas de banho, acesso por elevador
+
+### Español (`"language": "es"`)
+- Keywords: "apartamento en venta en Lisboa", "inmobiliaria en Portugal"
+- Formato de precio: €650.000
+- Vocabulario: habitaciones, baños, ascensor, balcón
 
 ## 🏗️ **Arquitectura del proyecto**
 

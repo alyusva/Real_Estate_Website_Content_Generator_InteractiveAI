@@ -23,36 +23,37 @@ def test_template_mode():
     from app.config import settings
     settings.GENERATION_MODE = "template"
     
-    sample_data = {
-        "title": "T3 apartment in Lisbon",
-        "location": {
-            "city": "Lisbon",
-            "neighborhood": "Campo de Ourique"
-        },
-        "features": {
-            "bedrooms": 3,
-            "bathrooms": 2,
-            "area_sqm": 120,
-            "balcony": True,
-            "parking": False,
-            "elevator": True,
-            "floor": 2,
-            "year_built": 2005
-        },
-        "price": 650000,
-        "listing_type": "sale",
-        "language": "en"
-    }
-    
-    try:
-        property_input = PropertyInput(**sample_data)
-        content = generate_content(property_input)
-        print(content)
-        print("\n✅ Template mode successful!")
-    except Exception as e:
-        print(f"❌ Template mode failed: {e}")
-    
-    print("\n" + "=" * 60)
+    for lang, lang_name in [("en", "ENGLISH"), ("pt", "PORTUGUESE"), ("es", "SPANISH")]:
+        sample_data = {
+            "title": "T3 apartment in Lisbon",
+            "location": {
+                "city": "Lisbon",
+                "neighborhood": "Campo de Ourique"
+            },
+            "features": {
+                "bedrooms": 3,
+                "bathrooms": 2,
+                "area_sqm": 120,
+                "balcony": True,
+                "parking": False,
+                "elevator": True,
+                "floor": 2,
+                "year_built": 2005
+            },
+            "price": 650000,
+            "listing_type": "sale",
+            "language": lang
+        }
+        print(f"\n{lang_name} CONTENT:")
+        print("=" * 60)
+        try:
+            property_input = PropertyInput(**sample_data)
+            content = generate_content(property_input)
+            print(content)
+            print("\n✅ Template mode successful!")
+        except Exception as e:
+            print(f"❌ Template mode failed: {e}")
+        print("\n" + "=" * 60)
 
 def test_openai_mode():
     """Test OpenAI-based generation."""
@@ -181,10 +182,7 @@ To start Ollama:
 1. Install Ollama: https://ollama.ai/download
 2. Pull a model: ollama pull llama3.2
 3. Start server: ollama serve (runs on port 11434)
-
-Alternatively with Docker:
-docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-docker exec -it ollama ollama pull llama3.2
+Alternatively with Docker
 """)
     print("=" * 60)
 

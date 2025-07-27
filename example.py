@@ -42,7 +42,7 @@ def test_local_generation():
     english_content = generate_content(property_input)
     print(english_content)
     print("\n" + "=" * 60)
-    
+
     # Test Portuguese generation
     print("\nPORTUGUESE CONTENT:")
     print("=" * 60)
@@ -50,6 +50,15 @@ def test_local_generation():
     property_input_pt = PropertyInput(**sample_data)
     portuguese_content = generate_content(property_input_pt)
     print(portuguese_content)
+    print("\n" + "=" * 60)
+
+    # Test Spanish generation
+    print("\nSPANISH CONTENT:")
+    print("=" * 60)
+    sample_data["language"] = "es"
+    property_input_es = PropertyInput(**sample_data)
+    spanish_content = generate_content(property_input_es)
+    print(spanish_content)
     print("\n" + "=" * 60)
 
 def test_api_endpoint():
@@ -82,7 +91,7 @@ def test_api_endpoint():
         response = requests.post(
             "http://localhost:8000/generate",
             json=sample_data,
-            timeout=10
+            timeout=30
         )
         
         if response.status_code == 200:
