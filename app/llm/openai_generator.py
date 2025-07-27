@@ -113,8 +113,7 @@ Format: each line should start with "•" and be concise.
         
         # Convert to HTML format
         lines = [line.strip() for line in features_text.split('\n') if line.strip()]
-        features_html = '\n'.join([f'  <li>{re.sub(r"^[-•\s]+", "", line)}</li>' for line in lines if line])
-        
+        features_html = '\n'.join(['  <li>{}</li>'.format(re.sub(r"^[-•\s]+", "", line)) for line in lines if line])
         return f'<ul id="key-features">\n{features_html}\n</ul>'
     
     def generate_neighborhood(self, data: Dict[str, Any]) -> str:
