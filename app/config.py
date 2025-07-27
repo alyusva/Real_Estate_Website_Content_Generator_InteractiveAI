@@ -9,7 +9,7 @@ class Settings:
     """Application settings loaded from environment variables."""
     
     # Generation Mode
-    GENERATION_MODE: Literal["template", "openai", "ollama"] = os.getenv("GENERATION_MODE", "template")
+    GENERATION_MODE: Literal["template", "openai", "ollama"] = os.getenv("GENERATION_MODE", "openai")
     
     # OpenAI Configuration
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")

@@ -21,7 +21,7 @@ class PropertyInput(BaseModel):
     features: Features
     price: float
     listing_type: str = Field(..., description="'sale' or 'rent'")
-    language: str = Field("en", description="Language code: 'en' or 'pt'")
+    language: str = Field("en", description="Language code: 'en' or 'pt' or 'es'")
 
 class ContentOutput(BaseModel):
     content: str 

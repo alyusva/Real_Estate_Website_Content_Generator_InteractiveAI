@@ -8,7 +8,7 @@ def generate_title(data: Dict[str, Any]) -> str:
     listing_type = data['listing_type']
     
     bedrooms = features.get('bedrooms', 0)
-    property_type = f"T{bedrooms}" if bedrooms > 0 else "Apartment"
+    property_type = f"{bedrooms}-Bedroom" if bedrooms > 0 else "Apartment"
     action = "for Sale" if listing_type == "sale" else "for Rent"
     
     title = f"{property_type} Apartment {action} in {location['neighborhood']}, {location['city']}"
@@ -50,7 +50,7 @@ def generate_h1(data: Dict[str, Any]) -> str:
     
     highlight_text = f" with {highlights[0]}" if highlights else ""
     
-    headline = f"Modern T{bedrooms} Apartment{highlight_text} in {location['neighborhood']}, {location['city']}"
+    headline = f"Modern {bedrooms}-Bedroom Apartment{highlight_text} in {location['neighborhood']}, {location['city']}"
     return f"<h1>{headline}</h1>"
 
 def generate_description(data: Dict[str, Any]) -> str:
@@ -68,7 +68,7 @@ def generate_description(data: Dict[str, Any]) -> str:
     
     # Build description parts
     location_desc = f"Located in the charming neighborhood of {location['neighborhood']}"
-    property_desc = f"this elegant T{bedrooms} apartment offers {area:.0f} sqm of bright and spacious living"
+    property_desc = f"this elegant {bedrooms}-Bedroom apartment offers {area:.0f} sqm of bright and spacious living"
     
     floor_text = f" on the {floor}{'nd' if floor == 2 else 'rd' if floor == 3 else 'th'} floor" if floor else ""
     building_features = []

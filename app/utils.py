@@ -45,6 +45,14 @@ def get_seo_keywords(data: Dict[str, Any], language: str) -> Dict[str, str]:
             'real_estate': "imobiliário em Portugal",
             'apartment_type': f"apartamento T{bedrooms}" if bedrooms > 0 else "apartamento"
         }
+    elif language == "es":
+        keywords = {
+            'property_type': f"{bedrooms} habitaciones" if bedrooms > 0 else "apartamento",
+            'action': "en venta" if listing_type == "sale" else "en alquiler",
+            'location_phrase': f"en {neighborhood}, {city}" if neighborhood else f"en {city}",
+            'real_estate': "inmobiliaria en España",
+            'apartment_type': f"apartamento de {bedrooms} habitaciones" if bedrooms > 0 else "apartamento"
+        }
     else:  # English
         bedrooms_text = f"{bedrooms}-bedroom" if bedrooms > 0 else ""
         keywords = {

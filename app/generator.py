@@ -113,10 +113,11 @@ def _get_ollama_generator():
         raise Exception(f"Failed to initialize Ollama generator: {str(e)}")
 
 def _get_template_generator(language: str):
-    """Get template generator for the specified language."""
     if language == "pt":
         from .templates.pt import content as template
-    else:  # Default to English
+    elif language == "es":
+        from .templates.es import content as template
+    else: # Default to English
         from .templates.en import content as template
     return template
 

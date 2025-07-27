@@ -72,6 +72,8 @@ class OllamaGenerator:
         
         if language == "pt":
             prompt = f"Cria um título H1 atrativo (diferente do título SEO) para um apartamento T{features.get('bedrooms', '')} em {location['neighborhood']}, {location['city']}. Deve ser cativante e incluir uma característica especial se disponível. Máximo 80 caracteres. Responde apenas com o título."
+        elif language == "es":
+            prompt = f"Crear un título H1 atractivo (diferente del título SEO) para un apartamento de{features.get('bedrooms', '')} habitaciones en {location['neighborhood']}, {location['city']}. Debe ser cautivador e incluir una característica especial si está disponible. Máximo 80 caracteres. Responde solo con el título."
         else:
             prompt = f"Create an attractive H1 headline (different from SEO title) for a {features.get('bedrooms', '')}-bedroom apartment in {location['neighborhood']}, {location['city']}. Should be catchy and include a special feature if available. Maximum 80 characters. Respond only with the headline."
         
@@ -100,6 +102,15 @@ Lista 4-5 características principais em formato de bullet points para:
 - Características: varanda={'sim' if features.get('balcony') else 'não'}, elevador={'sim' if features.get('elevator') else 'não'}, estacionamento={'sim' if features.get('parking') else 'não'}
 
 Formato: cada linha deve começar com "•" e ser concisa. Responde apenas com a lista.
+"""
+        elif language == "es":
+            prompt = f"""
+Lista 4-5 características clave en formato de puntos clave para:
+- Apartamento de {features.get('bedrooms', '')} habitaciones en {location['neighborhood']}
+- Área: {features.get('area_sqm', '')} m²
+- Características: balcón={'sí' if features.get('balcony') else 'no'}, ascensor={'sí' if features.get('elevator') else 'no'}, aparcamiento={'sí' if features.get('parking') else 'no'}
+
+Formato: cada línea debe comenzar con "•" y ser concisa. Responde solo con la lista.
 """
         else:
             prompt = f"""
