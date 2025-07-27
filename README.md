@@ -293,6 +293,42 @@ README.md               # Esta documentación
 <meta name="description" content="Elegant 3-bedroom residence featuring modern amenities in Campo de Ourique...">
 ```
 
+
+## 🧩 **Ejemplos y pruebas interactivas**
+
+El repositorio incluye varios archivos para facilitar la prueba y demostración del sistema:
+
+### `example.py`
+- Permite probar la generación de contenido localmente y contra la API REST.
+- Genera contenido en inglés, portugués y español usando datos de ejemplo.
+- Incluye tests de casos límite (datos mínimos o incompletos).
+- Útil para comprobar rápidamente la generación y la robustez del sistema.
+
+**Uso:**
+```bash
+python example.py
+```
+
+### `example_multi_mode.py`
+- Demuestra y prueba los tres modos de generación: Template, OpenAI y Ollama.
+- Ejecuta ejemplos en los tres idiomas y muestra una guía de configuración.
+- Cambia automáticamente la configuración del modo antes de cada test.
+- Útil para validar la integración y resultados de cada modo.
+
+**Uso:**
+```bash
+python example_multi_mode.py
+```
+
+### `RealEstateContentInteractiveDemo.ipynb`
+- Notebook interactivo para probar la generación de contenido de forma visual.
+- Permite elegir el modo de generación y el idioma con desplegables.
+- Permite subir un archivo JSON o rellenar un formulario visual.
+- Muestra el HTML generado como texto y como HTML renderizado.
+- Ideal para demostraciones, pruebas rápidas y exploración de resultados.
+
+**Uso:**
+Abre el notebook en VS Code o JupyterLab y ejecuta las celdas.
 ---
 
 **Desarrollado por**: Alvaro Yuste Valles  
