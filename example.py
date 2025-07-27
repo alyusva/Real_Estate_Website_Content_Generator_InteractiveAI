@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Example script demonstrating the Real Estate Content Generator API.
-This script shows how to use the API with sample data from the challenge.
+Also, this script shows how to use the API with sample data from the challenge.
 """
 
 import json
@@ -13,7 +13,7 @@ def test_local_generation():
     """Test content generation without API server."""
     print("=== LOCAL CONTENT GENERATION TEST ===\n")
     
-    # Example data from the challenge document
+    # Example data
     sample_data = {
         "title": "T3 apartment in Lisbon",
         "location": {
@@ -36,7 +36,7 @@ def test_local_generation():
     }
     
     # Test English generation
-    print("🇺🇸 ENGLISH CONTENT:")
+    print("ENGLISH CONTENT:")
     print("=" * 60)
     property_input = PropertyInput(**sample_data)
     english_content = generate_content(property_input)
@@ -44,7 +44,7 @@ def test_local_generation():
     print("\n" + "=" * 60)
     
     # Test Portuguese generation
-    print("\n🇵🇹 PORTUGUESE CONTENT:")
+    print("\nPORTUGUESE CONTENT:")
     print("=" * 60)
     sample_data["language"] = "pt"
     property_input_pt = PropertyInput(**sample_data)
@@ -97,7 +97,7 @@ def test_api_endpoint():
             
     except requests.exceptions.ConnectionError:
         print("❌ Could not connect to API server.")
-        print("💡 Start the server with: uvicorn app.main:app --reload")
+        print("Start the server with: uvicorn app.main:app --reload")
     except Exception as e:
         print(f"❌ Error: {e}")
 
@@ -123,7 +123,7 @@ def test_edge_cases():
         "language": "en"
     }
     
-    print("🧪 MINIMAL DATA TEST (missing optional fields):")
+    print("MINIMAL DATA TEST (missing optional fields):")
     print("-" * 50)
     property_input = PropertyInput(**minimal_data)
     minimal_content = generate_content(property_input)
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     test_edge_cases()
     test_api_endpoint()
     
-    print("\n✨ Example completed!")
+    print("\nExample completed!!!!")
     print("To start the API server, run:")
     print("  uvicorn app.main:app --reload")
     print("\nThen test with:")

@@ -29,11 +29,11 @@ class OpenAIGenerator:
                     {"role": "system", "content": "You are an expert real estate copywriter and SEO specialist."},
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=max_tokens,
-                temperature=0.7,
-                top_p=1.0,
-                frequency_penalty=0.0,
-                presence_penalty=0.0
+                max_tokens=max_tokens,  # Maximum number of tokens in the generated response
+                temperature=0.7,        # Controls randomness: higher values = more creative, lower = more deterministic
+                top_p=1.0,              # Nucleus sampling: 1.0 means all words are considered (maximum diversity)
+                frequency_penalty=0.0,  # Penalizes repeated tokens in the response (higher = less repetition)
+                presence_penalty=0.0    # Penalizes new topic introduction (higher = more likely to introduce new topics)
             )
             return response.choices[0].message.content.strip()
         except Exception as e:

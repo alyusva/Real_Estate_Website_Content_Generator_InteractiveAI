@@ -28,8 +28,11 @@ class OllamaGenerator:
                         "prompt": prompt,
                         "stream": False,
                         "options": {
-                            "temperature": 0.7,
+                            # temperature controls the randomness of generation. 0.7 is a balanced value, producing creative but not chaotic text.
+                            "temperature": 0.7, 
+                            # top_p limits the cumulative probability of candidate words. 0.9 allows variety while maintaining coherence.
                             "top_p": 0.9,
+                            # top_k limits the number of candidate words considered at each step. 40 gives diversity without losing quality.
                             "top_k": 40
                         }
                     }
