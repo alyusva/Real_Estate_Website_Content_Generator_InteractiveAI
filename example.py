@@ -2,6 +2,9 @@
 """
 Example script demonstrating the Real Estate Content Generator API.
 Also, this script shows how to use the API with sample data from the challenge.
+- Local English, Portuguese, and Spanish content generation.
+- Edge case handling.
+- API endpoint testing.
 """
 
 import json

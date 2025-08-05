@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
 Example script demonstrating all 3 generation modes:
-1. Template mode (original)
+1. Template mode (original) English, Portuguese, and Spanish.
 2. OpenAI mode (requires API key)
 3. Ollama mode (requires local Ollama server)
+- Show the configuration
 """
 
 import os
