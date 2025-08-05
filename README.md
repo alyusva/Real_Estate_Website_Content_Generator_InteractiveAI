@@ -39,7 +39,7 @@ This solution implements the **AI Engineer Technical Challenge** to generate hig
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/alyusva/Real_Estate_Website_Content_Generator_InteractiveAI
 cd Real_Estate_Website_Content_Generator_InteractiveAI
 
 # Create virtual environment
