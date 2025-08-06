@@ -26,7 +26,7 @@ def generate_content(data: PropertyInput) -> str:
     settings.validate_configuration()
     
     # Convert Pydantic model to dict for easier processing
-    data_dict = data.dict()
+    data_dict = data.model_dump()
     
     # Choose generator based on mode
     if settings.GENERATION_MODE == "openai":
